@@ -1,1 +1,1 @@
-# Unity-Barracuda-MobileNetV2-WebGL-Sample
+# Unity-Barracuda-MobileNetV1-WebGL-Sample
