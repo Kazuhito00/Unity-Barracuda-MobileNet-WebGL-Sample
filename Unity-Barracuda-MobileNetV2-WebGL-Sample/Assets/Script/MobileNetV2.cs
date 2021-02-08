@@ -8,23 +8,46 @@ public class MobileNetV2
 {   
     readonly IWorker worker;
 
+    private int inputShapeX = 224;
+    private int inputShapeY = 224;
+
     public MobileNetV2(NNModel modelAsset)
     {
         var model = ModelLoader.Load(modelAsset);
 
 #if UNITY_WEBGL && !UNITY_EDITOR
         Debug.Log("Worker:CPU");
-        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharpRef, model); // CPU
+        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharpBurst, model); // CPU
 #else
         Debug.Log("Worker:GPU");
-        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.ComputeRef, model); // GPU
+        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.ComputePrecompiled, model); // GPU
 #endif
     }
 
 #if UNITY_WEBGL && !UNITY_EDITOR
     public float[] Inference(Texture2D texture)
     {
-        var inputTensor = new Tensor(texture, 3);
+        // テクスチャコピー
+        Texture2D inputTexture = new Texture2D(texture.width, texture.height);
+        var tempColor32 = texture.GetPixels32();
+        inputTexture.SetPixels32(tempColor32);
+        inputTexture.Apply();
+        Graphics.CopyTexture(texture, inputTexture);
+
+        // テクスチャリサイズ、およびColor32データ取得
+        TextureScale.Bilinear(inputTexture, inputShapeX, inputShapeY);
+        var color32 = inputTexture.GetPixels32();
+        MonoBehaviour.Destroy(inputTexture);
+        
+        float[] floatValues = new float[inputShapeX * inputShapeY * 3];
+        for (int i = 0; i < color32.Length; ++i) {
+            var color = color32[i];
+            floatValues[i * 3 + 0] = (color.r - 0) / 255.0f;
+            floatValues[i * 3 + 1] = (color.g - 0) / 255.0f;
+            floatValues[i * 3 + 2] = (color.b - 0) / 255.0f;
+        }
+
+        var inputTensor = new Tensor(1, inputShapeY, inputShapeX, 3, floatValues);
 
         worker.Execute(inputTensor);
         var outputTensor = worker.PeekOutput();

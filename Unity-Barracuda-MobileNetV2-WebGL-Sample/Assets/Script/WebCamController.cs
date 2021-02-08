@@ -53,7 +53,7 @@ public class WebCamController : MonoBehaviour
         webcamTexture.GetPixels32(color32);
         texture.SetPixels32(color32);
         texture.Apply();
-/*
+        
         // 推論
         var scores = mobileNetV2.Inference(texture);
 
@@ -67,7 +67,6 @@ public class WebCamController : MonoBehaviour
                 classId = i;
             }
         }
-        // Debug.Log(classId + "(" + maxScore.ToString() + ")" + ":" + mobileNetV2.getClassName(classId));
         
         // 描画用テキスト構築
         string resultText = "";        
@@ -80,6 +79,6 @@ public class WebCamController : MonoBehaviour
         }
 
         // テキスト画面反映
-        text.text = resultText;*/
+        text.text = resultText;
     }
 }

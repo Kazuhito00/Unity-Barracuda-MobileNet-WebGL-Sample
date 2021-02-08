@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ffc6e9132c2f343bf3efe429f5998a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelAsset: {fileID: 5022602860645237092, guid: be8bd62cc104e3a47a8ad85ca860f593, type: 3}
+  modelAsset: {fileID: 5022602860645237092, guid: 15b403f24b378a84b8aba28664a5a454, type: 3}
   text: {fileID: 1470564567}
 --- !u!1 &595168056
 GameObject:
@@ -533,7 +533,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 59800730734c33f439010a220932f2df, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
