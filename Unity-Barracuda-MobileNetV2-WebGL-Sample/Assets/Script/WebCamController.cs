@@ -27,13 +27,24 @@ public class WebCamController : MonoBehaviour
         // Webカメラ準備
         WebCamDevice[] devices = WebCamTexture.devices;
         webcamTexture = new WebCamTexture(devices[0].name, this.width, this.height, this.fps);
-        GetComponent<Renderer>().material.mainTexture = webcamTexture;
         webcamTexture.Play();
         
         // MobileNetV2推論用クラス
         mobileNetV2 = new MobileNetV2(modelAsset);
-        color32 = new Color32[webcamTexture.width * webcamTexture.height];
-        texture = new Texture2D(webcamTexture.width, webcamTexture.height);
+        StartCoroutine(WebCamTextureInitialize());
+    }
+
+    IEnumerator WebCamTextureInitialize()
+    {
+        while (true) {
+            if (webcamTexture.width > 16 && webcamTexture.height > 16) {
+                GetComponent<Renderer>().material.mainTexture = webcamTexture;
+                color32 = new Color32[webcamTexture.width * webcamTexture.height];
+                texture = new Texture2D(webcamTexture.width, webcamTexture.height);
+                break;
+            }
+            yield return null;
+        }
     }
     
     void Update()
@@ -42,7 +53,7 @@ public class WebCamController : MonoBehaviour
         webcamTexture.GetPixels32(color32);
         texture.SetPixels32(color32);
         texture.Apply();
-
+/*
         // 推論
         var scores = mobileNetV2.Inference(texture);
 
@@ -69,6 +80,6 @@ public class WebCamController : MonoBehaviour
         }
 
         // テキスト画面反映
-        text.text = resultText;
+        text.text = resultText;*/
     }
 }

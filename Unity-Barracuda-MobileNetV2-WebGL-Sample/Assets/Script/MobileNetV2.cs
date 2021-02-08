@@ -12,14 +12,16 @@ public class MobileNetV2
     {
         var model = ModelLoader.Load(modelAsset);
 
-        // #if UNITY_WEBGL
-        // worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharpRef, model); // CPU
-        // #else
-        // worker = WorkerFactory.CreateWorker(WorkerFactory.Type.ComputeRef, model); // GPU
-        // #endif
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Debug.Log("Worker:CPU");
+        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharpRef, model); // CPU
+#else
+        Debug.Log("Worker:GPU");
         worker = WorkerFactory.CreateWorker(WorkerFactory.Type.ComputeRef, model); // GPU
+#endif
     }
 
+#if UNITY_WEBGL && !UNITY_EDITOR
     public float[] Inference(Texture2D texture)
     {
         var inputTensor = new Tensor(texture, 3);
@@ -33,6 +35,21 @@ public class MobileNetV2
 
         return outputArray;
     }
+#else
+    public float[] Inference(Texture2D texture)
+    {
+        var inputTensor = new Tensor(texture, 3);
+
+        worker.Execute(inputTensor);
+        var outputTensor = worker.PeekOutput();
+        var outputArray = outputTensor.ToReadOnlyArray();
+        
+        inputTensor.Dispose();
+        outputTensor.Dispose();
+
+        return outputArray;
+    }
+#endif
 
     ~MobileNetV2()
     {
