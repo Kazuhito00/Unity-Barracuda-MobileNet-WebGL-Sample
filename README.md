@@ -8,7 +8,7 @@ Unity Barracudaを用いてMobileNet(画像クラス分類)をWebGL上で推論�
 
 # Demo
 動作確認用ページは以下。<br>
-[https://kazuhito00.github.io/Unity-Barracuda-MobileNetV1-WebGL-Sample/WebGL-Build](https://kazuhito00.github.io/Unity-Barracuda-MobileNetV1-WebGL-Sample/WebGL-Build)
+[https://kazuhito00.github.io/Unity-Barracuda-MobileNet-WebGL-Sample/WebGL-Build](https://kazuhito00.github.io/Unity-Barracuda-MobileNet-WebGL-Sample/WebGL-Build)
 
 # FPS(参考値)
 |  | MobileNetV1 | MobileNetV2 |
@@ -37,3 +37,6 @@ Unity Barracudaを用いてMobileNet(画像クラス分類)をWebGL上で推論�
  
 # License 
 Unity-Barracuda-MobileNet-WebGL-Sample is under [Apache-2.0 License](LICENSE).
+
+# Licence(Font)
+Noto Sans JP fonts are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
