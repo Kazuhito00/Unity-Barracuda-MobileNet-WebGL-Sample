@@ -9,6 +9,7 @@ Unity Barracudaを用いてMobileNet(画像クラス分類)をWebGL上で推論�
 
 # Demo
 動作確認用ページは以下。<br>
+MobileNetV1のデモです。<br>
 [https://kazuhito00.github.io/Unity-Barracuda-MobileNet-WebGL-Sample/WebGL-Build](https://kazuhito00.github.io/Unity-Barracuda-MobileNet-WebGL-Sample/WebGL-Build)
 
 # FPS(参考値)
