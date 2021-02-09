@@ -16,7 +16,7 @@ MobileNetV1のデモです。<br>
 |  | MobileNetV1 | MobileNetV2 |
 | - | :- | :- |
 | WebGL<br>CPU：Core i7-8750H CPU @2.20GHz | 約2.2FPS<br>CSharpBurst | 約0.08FPS<br>CSharpRef<br>※CSharpBurstで動作せず |
-| Android<br>Google Pixel4a(Snapdragon 730G) | 約 FPS<br>ComputePrecompiled | 約 FPS<br>ComputePrecompiled |
+| Android<br>Google Pixel4a(Snapdragon 730G) | 約1.9FPS<br>ComputePrecompiled | 約1.8FPS<br>ComputePrecompiled |
 | Unity Editor<br>GPU：GTX 1050 Ti Max-Q(4GB) | 約45FPS<br>ComputePrecompiled | 約41FPS<br>ComputePrecompiled |
 
 # Requirement (Unity)
