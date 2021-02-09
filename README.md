@@ -12,7 +12,7 @@ Unity Barracudaを用いてMobileNet(画像クラス分類)をWebGL上で推論�
 
 # FPS(参考値)
 |  | MobileNetV1 | MobileNetV2 |
-| - | - | - |
+| - | :- | :- |
 | WebGL<br>CPU：Core i7-8750H CPU @2.20GHz | 約2.2FPS<br>CSharpBurst | 約0.08FPS<br>CSharpRef<br>※CSharpBurstで動作せず |
 | Android<br>Google Pixel4a(Snapdragon 730G) | 約 FPS<br>ComputePrecompiled | 約 FPS<br>ComputePrecompiled |
 | Unity Editor<br>GPU：GTX 1050 Ti Max-Q(4GB) | 約45FPS<br>ComputePrecompiled | 約41FPS<br>ComputePrecompiled |
