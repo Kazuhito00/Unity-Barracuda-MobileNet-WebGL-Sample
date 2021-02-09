@@ -1,4 +1,4 @@
-﻿// Only works on ARGB32, RGB24 and Alpha8 textures that are marked readable
+// Only works on ARGB32, RGB24 and Alpha8 textures that are marked readable
  
 using System.Threading;
 using UnityEngine;
@@ -38,12 +38,10 @@ public class TextureScale
     {
         texColors = tex.GetPixels();
         newColors = new Color[newWidth * newHeight];
-        if (useBilinear)
-        {
+        if (useBilinear) {
             ratioX = 1.0f / ((float)newWidth / (tex.width-1));
             ratioY = 1.0f / ((float)newHeight / (tex.height-1));
-        }
-        else {
+        } else {
             ratioX = ((float)tex.width) / newWidth;
             ratioY = ((float)tex.height) / newHeight;
         }
@@ -56,8 +54,7 @@ public class TextureScale
         if (mutex == null) {
             mutex = new Mutex(false);
         }
-        if (cores > 1)
-        {
+        if (cores > 1) {
             int i = 0;
             ThreadData threadData;
             for (i = 0; i < cores-1; i++) {
@@ -67,28 +64,19 @@ public class TextureScale
                 thread.Start(threadData);
             }
             threadData = new ThreadData(slice*i, newHeight);
-            if (useBilinear)
-            {
+            if (useBilinear) {
                 BilinearScale(threadData);
-            }
-            else
-            {
+            } else {
                 PointScale(threadData);
             }
-            while (finishCount < cores)
-            {
+            while (finishCount < cores) {
                 Thread.Sleep(1);
             }
-        }
-        else
-        {
+        } else {
             ThreadData threadData = new ThreadData(0, newHeight);
-            if (useBilinear)
-            {
+            if (useBilinear) {
                 BilinearScale(threadData);
-            }
-            else
-            {
+            } else {
                 PointScale(threadData);
             }
         }
@@ -104,8 +92,7 @@ public class TextureScale
     public static void BilinearScale (System.Object obj)
     {
         ThreadData threadData = (ThreadData) obj;
-        for (var y = threadData.start; y < threadData.end; y++)
-        {
+        for (var y = threadData.start; y < threadData.end; y++) {
             int yFloor = (int)Mathf.Floor(y * ratioY);
             var y1 = yFloor * w;
             var y2 = (yFloor+1) * w;
@@ -128,8 +115,7 @@ public class TextureScale
     public static void PointScale (System.Object obj)
     {
         ThreadData threadData = (ThreadData) obj;
-        for (var y = threadData.start; y < threadData.end; y++)
-        {
+        for (var y = threadData.start; y < threadData.end; y++) {
             var thisY = (int)(ratioY * y) * w;
             var yw = y * w2;
             for (var x = 0; x < w2; x++) {
