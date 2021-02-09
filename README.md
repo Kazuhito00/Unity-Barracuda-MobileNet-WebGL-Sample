@@ -7,6 +7,9 @@ Unity Barracudaを用いてMobileNet(画像クラス分類)をWebGL上で推論�
 [https://kazuhito00.github.io/Unity-Barracuda-MobileNetV1-WebGL-Sample/WebGL-Build](https://kazuhito00.github.io/Unity-Barracuda-MobileNetV1-WebGL-Sample/WebGL-Build)
 
 # FPS(参考値)
+* WebGL(CPU：Intel Core i7-8750H CPU@2.20GHz)
+* Android(Google Pixel4a(Snapdragon 730G))
+* Unity Editor(GPU：NVIDIA GeForce GTX 1050 Ti Max-Q(4GB GDDR5))
 
 # Requirement (Unity)
 * Unity 2020.1.6f1 or later
