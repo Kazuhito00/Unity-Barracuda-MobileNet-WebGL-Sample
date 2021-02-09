@@ -1,3 +1,10 @@
+# ToDo
+- [ ] FPS計測処理を追加する
+- [ ] コメントがMNISTのまま
+- [ ] ファイル名がV2のままのため、無印に統一する
+- [ ] Androidビルドを試す
+- [ ] 各FPSを計測する
+
 # Unity-Barracuda-MobileNet-WebGL-Sample
 Unity Barracudaを用いてMobileNet(画像クラス分類)をWebGL上で推論するサンプルです。<br>
 ![v9g8l-5fqfl](https://user-images.githubusercontent.com/37477845/107118246-1549c680-68c3-11eb-8bb3-961881a20158.gif)
