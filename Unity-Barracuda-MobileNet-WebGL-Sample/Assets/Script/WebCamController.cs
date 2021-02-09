@@ -21,6 +21,7 @@ public class WebCamController : MonoBehaviour
 
     // 推論結果描画用テキスト
     public Text text;
+    private readonly FPSCounter fpsCounter = new FPSCounter();
 
     void Start() 
     {
@@ -49,6 +50,8 @@ public class WebCamController : MonoBehaviour
     
     void Update()
     {
+        fpsCounter.Update();
+
         // 入力用テクスチャ準備
         webcamTexture.GetPixels32(color32);
         texture.SetPixels32(color32);
@@ -69,8 +72,9 @@ public class WebCamController : MonoBehaviour
         }
         
         // 描画用テキスト構築
-        string resultText = "";        
-        resultText = "Class ID:" + classId.ToString() + "\n";
+        string resultText = "";
+        resultText = "FPS:" + fpsCounter.FPS.ToString("F2") + "\n" + "\n";        
+        resultText = resultText + "Class ID:" + classId.ToString() + "\n";
         resultText = resultText + "Score:" + maxScore.ToString("F3") + "\n";
         if (classId >= 0) {
             resultText = resultText + "Name:" + mobileNet.getClassName(classId) + "\n";
