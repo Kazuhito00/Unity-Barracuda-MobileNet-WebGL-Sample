@@ -24,6 +24,7 @@ Unity Barracudaを用いてMobileNet(画像クラス分類)をWebGL上で推論�
 * [Barracuda 1.3.0 preview](https://docs.unity3d.com/Packages/com.unity.barracuda@1.3/manual/index.html)
 * [【Unity】WebGLで日本語テキストが表示されない問題について](https://chiritsumo-blog.com/unity-webgl-japanese/)
 * [Texutre2Dのサイズ変更【Unity】](https://kan-kikuchi.hatenablog.com/entry/TextureScale)
+* [【Unity】FPS を計測するスクリプト](https://baba-s.hatenablog.com/entry/2019/05/04/220500)
 
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
