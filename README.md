@@ -1,6 +1,7 @@
 # Unity-Barracuda-MobileNet-WebGL-Sample
 Unity Barracudaを用いてMobileNet(画像クラス分類)をWebGL上で推論するサンプルです。<br>
-現時点(2021/02/09)でUnityのWebGLはCPU推論のみのサポートです。GPU推論と比較しパフォーマンスは出ません。<br>
+現時点(2021/02/09)でUnityのWebGLはCPU推論のみのサポートです。<br>
+GPU推論と比較しパフォーマンスは出ません。GPU推論やAndroid上での実行時の参考FPSを後述しています。<br>
 ![v9g8l-5fqfl](https://user-images.githubusercontent.com/37477845/107378942-d1a7c480-6b2f-11eb-9e4f-ff17a466685e.gif)
 
 # Demo
