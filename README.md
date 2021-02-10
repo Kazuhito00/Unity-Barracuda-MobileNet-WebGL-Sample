@@ -37,7 +37,7 @@ WebCamController.cs の Update()の呼び出し周期を計測したものです
 * [【Unity】FPS を計測するスクリプト](https://baba-s.hatenablog.com/entry/2019/05/04/220500)
 
 # ToDo
-- [ ] Androidビルドの設定確認([Unity で Vulkan API を使用する](http://nakamura001.hatenablog.com/entry/20170621/1498030760)、[barracuda-release:issues85](https://github.com/Unity-Technologies/barracuda-release/issues/85)、[Unityで取得できるシステム情報](https://qiita.com/MARQUE/items/fd08fe57cbe4e0b53aa8))
+- [ ] Androidビルドの設定確認([Unity で Vulkan API を使用する]<br>参考：http://nakamura001.hatenablog.com/entry/20170621/1498030760)、[barracuda-release:issues85](https://github.com/Unity-Technologies/barracuda-release/issues/85)、[Unityで取得できるシステム情報](https://qiita.com/MARQUE/items/fd08fe57cbe4e0b53aa8)
 - [ ] [Androidの画面向きを横画面に固定する](https://deve-cat.com/unity-screen-rotation/)
 
 # Author
