@@ -46,4 +46,4 @@ WebCamController.cs の Update()の呼び出し周期を計測したものです
 Unity-Barracuda-MobileNet-WebGL-Sample is under [Apache-2.0 License](LICENSE).
 
 # Licence(Font)
-Noto Sans JP fonts are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+[Noto Sans JP fonts](https://fonts.google.com/specimen/Noto+Sans+JP) are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
