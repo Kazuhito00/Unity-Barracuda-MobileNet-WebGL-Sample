@@ -36,6 +36,9 @@ WebCamController.cs の Update()の呼び出し周期を計測したものです
 * [Texutre2Dのサイズ変更【Unity】](https://kan-kikuchi.hatenablog.com/entry/TextureScale)
 * [【Unity】FPS を計測するスクリプト](https://baba-s.hatenablog.com/entry/2019/05/04/220500)
 
+# ToDo
+- [ ] Androidビルドの設定確認([barracuda-release:issues85](https://github.com/Unity-Technologies/barracuda-release/issues/85))
+
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
  
