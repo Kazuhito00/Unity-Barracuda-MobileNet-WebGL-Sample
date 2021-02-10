@@ -10,7 +10,7 @@ MobileNetV1のデモです。<br>
 
 # FPS(参考値)
 WebCamController.cs の Update()の呼び出し周期を計測したものです。<br>
-以下のように動作は基本的に非同期処理のため、FPSは見かけ上のFPSであり、推論にかかった時間ではありません。<br>
+以下のように動作は基本的に非同期処理のため、FPSは見かけ上のFPSであり、推論自体のFPSではありません。<br>
 　CSharpBurst：非同期<br>
 　CSharpRef：同期<br>
 　ComputePrecompiled：非同期
