@@ -81,6 +81,9 @@ public class WebCamController : MonoBehaviour
         } else {
             resultText = resultText + "Name:????\n";
         }
+#if UNITY_IOS || UNITY_ANDROID
+        resultText = resultText + SystemInfo.graphicsDeviceType;
+#endif
 
         // テキスト画面反映
         text.text = resultText;
