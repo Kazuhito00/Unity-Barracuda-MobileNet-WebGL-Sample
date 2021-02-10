@@ -9,6 +9,11 @@ MobileNetV1のデモです。<br>
 [https://kazuhito00.github.io/Unity-Barracuda-MobileNet-WebGL-Sample/WebGL-Build](https://kazuhito00.github.io/Unity-Barracuda-MobileNet-WebGL-Sample/WebGL-Build/index.html)
 
 # FPS(参考値)
+WebCamController.cs の Update()の呼び出し周期を計測したものです。<br>
+以下のように動作は基本的に非同期処理のため、FPSは見かけ上のFPSであり、推論にかかった時間ではありません。<br>
+　CSharpBurst：非同期<br>
+　CSharpRef：同期<br>
+　ComputePrecompiled：非同期
 |  | MobileNetV1 | MobileNetV2 |
 | - | :- | :- |
 | WebGL<br>CPU：Core i7-8750H CPU @2.20GHz | 約2.2FPS<br>CSharpBurst | 約0.08FPS<br>CSharpRef<br>※CSharpBurstで動作せず |
